@@ -9,5 +9,5 @@ before_script:
 
 script: 
     - phpunit --coverage-text 
-    - phpunit --group intergration
+    - phpunit --group integration
     - bin/security-checker security:check composer.lock

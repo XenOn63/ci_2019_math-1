@@ -1,11 +1,11 @@
 language: php
+
 php:
-  - hhvm # on Trusty only
-  - nightly
+    - 5.4
+    - 5.5
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source --dev
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install --dev --prefer-dist --no-interaction
 
-script
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+script: phpunit --coverage-text

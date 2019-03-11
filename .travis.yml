@@ -6,9 +6,8 @@ php:
 before_script:
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar install --dev --prefer-dist --no-interaction
-    - php security-checker.phar security:check composer.lock
 
 script: 
     - phpunit --coverage-text 
     - phpunit --group intergration
-    - security-checker security:check composer.lock
+    - bin/security-checker security:check composer.lock

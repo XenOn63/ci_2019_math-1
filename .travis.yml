@@ -10,3 +10,4 @@ before_script:
 script: phpunit --coverage-text
 
 -bin/phpunit --group intergration
+-bin/security-checker security:check composer.lock
